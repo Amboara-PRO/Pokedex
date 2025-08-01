@@ -16,7 +16,14 @@ export default function Details() {
   return (
     <div className="flex flex-col w-full h-full items-center pr-10 pl-10">
       <section className="flex flex-col items-center w-full relative">
-        <Link to="/" className="absolute left-0">← Retour</Link>
+       <Link
+  to="/"
+  className="absolute left-4 top-4 flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:underline transition-all duration-200"
+>
+  <span className="text-xl">←</span>
+  <span>Retour à l’accueil</span>
+</Link>
+
         <img src={pokemon.sprites.front_default} alt={pokemon.name} className="w-1/4"/>
       </section>
       <section className="flex flex-col items-center w-full bg-[#F8F8F8] rounded-2xl justify-between h-full">
