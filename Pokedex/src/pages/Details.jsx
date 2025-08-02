@@ -36,7 +36,7 @@ export default function Details() {
         <div className="flex flex-row w-11/12 h-1/2 border-b-[#D3D3D3] border-b-2 pt-10 pb-10 justify-between">
           <div className="flex flex-col justify-between gap-5">
             <h1 className="text-xl text-gray-400">No. {pokemon.id}</h1>
-            <h1 className="text-4xl text-white font-semibold">{pokemon.name}</h1>
+            <h1 className="text-4xl text-black-50 font-semibold">{pokemon.name}</h1>
           </div>
           <div>
             <p className="text-xl">
