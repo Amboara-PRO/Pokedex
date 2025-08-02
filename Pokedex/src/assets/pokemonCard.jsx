@@ -36,7 +36,9 @@ export default function PokemonCard({ name }) {
         {pokemon.types.map((t) => (
           <span
             key={t.slot}
-            className={`text-xs px-2 py-1 rounded-full ${getTypeColor(t.type.name)} text-white`}
+            className={`text-xs px-2 py-1 rounded-full ${getTypeColor(
+              t.type.name
+            )} text-white`}
           >
             {t.type.name}
           </span>
