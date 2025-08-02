@@ -35,13 +35,15 @@ export default function Details() {
       </section>
       <section className="flex flex-col items-center w-full bg-[#F8F8F8] rounded-2xl justify-between h-full">
         <div className="flex flex-row w-11/12 h-1/2 border-b-[#D3D3D3] border-b-2 pt-10 pb-10 justify-between">
-        <div className="flex flex-col justify-between gap-5">
-          <h1 className="text-xl">No. {pokemon.id}</h1>
-          <h1 className="text-4xl font-semibold">{pokemon.name}</h1>
-        </div>
-        <div>
-          <p className="text-xl">{pokemon.types.map(t => t.type.name).join(", ")}</p>
-        </div>
+          <div className="flex flex-col justify-between gap-5">
+            <h1 className="text-xl text-gray-400">No. {pokemon.id}</h1>
+            <h1 className="text-4xl text-white font-semibold">{pokemon.name}</h1>
+          </div>
+          <div>
+            <p className="text-xl">
+              {pokemon.types.map((t) => t.type.name).join(", ")}
+            </p>
+          </div>
         </div>
         <div className="flex flex-col items-center w-full 1/2">
         <section className="w-11/12 pt-5 flex flex-col justify-between gap-5 pb-10">
