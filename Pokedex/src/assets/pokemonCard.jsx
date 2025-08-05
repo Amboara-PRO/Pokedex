@@ -48,7 +48,8 @@ export default function PokemonCard({ name }) {
   );
 }
 
-function getTypeColor(type) {
+// eslint-disable-next-line react-refresh/only-export-components
+export function getTypeColor(type) {
   const colors = {
     grass: "bg-green-600",
     fire: "bg-red-600",
