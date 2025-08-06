@@ -33,7 +33,7 @@ export default function Home() {
       );
       setFilteredPokemons(results);
       setLoading(false);
-    }, 5000);
+    }, 3000);
   };
 
   return (

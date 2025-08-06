@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function PokemonCard({ name }) {
   const [pokemon, setPokemon] = useState(null);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -11,13 +12,26 @@ export default function PokemonCard({ name }) {
       .then((data) => setPokemon(data));
   }, [name]);
 
+  const handleClick = () => {
+    setLoading(true);
+    setTimeout(() => {
+      navigate(`/pokemon/${pokemon.name}`);
+    }, 5000);
+  };
+
   if (!pokemon) return null;
 
   return (
     <div
-      onClick={() => navigate(`/pokemon/${pokemon.name}`)}
-      className="cursor-pointer bg-[#2c2c2e] rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-200 p-4 flex flex-col items-center text-center"
+      onClick={handleClick}
+      className="cursor-pointer bg-[#2c2c2e] rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-200 p-4 flex flex-col items-center text-center relative"
     >
+      {loading && (
+        <div className="absolute inset-0 bg-black/80 flex justify-center items-center z-10 rounded-xl">
+          <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-white"></div>
+        </div>
+      )}
+
       <div className="w-36 h-36 bg-[#3a3a3c] rounded-full flex items-center justify-center mb-4">
         <img
           src={pokemon.sprites.front_default}
